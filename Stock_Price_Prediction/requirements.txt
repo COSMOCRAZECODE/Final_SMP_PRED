@@ -1,2 +1,8 @@
 yfinance
-plotly
+streamlit
+plotly.express
+sklearn.preprocessing
+keras
+alpha_vantage.fundamentaldata
+stocknews
+pandas_ta
