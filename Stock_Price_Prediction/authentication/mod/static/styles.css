@@ -1,0 +1,215 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a0a0a; /* Dark outer background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.background-video {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main container */
+.container {
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login/Signup Box */
+.login-box {
+    display: flex;
+    width: 800px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.1); /* Slight Glass Effect */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.05); /* Soft shadow */
+}
+
+/* Hover Effect */
+.login-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Video Container */
+.video-container {
+    flex: 1.5;
+    position: relative;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Fading effect */
+.video-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+}
+
+/* Form Container */
+.form-container {
+    flex: 1;
+    background: rgba(20, 20, 20, 0.9);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.toggle-buttons button {
+    padding: 10px 20px;
+    background: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.toggle-buttons .active {
+    background: #ff4747;
+}
+
+/* Form Styling */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    width: 80%;
+    padding: 10px;
+    background: #ff4747;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Sign-up link */
+p {
+    margin-top: 15px;
+    color: white;
+}
+
+a {
+    color: #ff4747;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hide Signup Form by Default */
+.hidden {
+    display: none;
+}
+
+/* Background Animation (Optional) */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes moveGrid {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+body {
+    background: linear-gradient(-45deg, #0a0a0a, #111, #222, #0a0a0a);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s ease infinite;
+}
+
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+.flash-message {
+    padding: 8px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;;
+}
+
+.flash-message.success {
+    background-color: #28a745; /* A nicer green */
+    color: white;
+    border-left: 5px solid #218838;
+}
+
+.flash-message.danger {
+    background-color: #dc3545; /* A better red */
+    color: white;
+    border-left: 5px solid #c82333;
+}
+

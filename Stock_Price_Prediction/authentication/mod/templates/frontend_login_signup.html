@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticate</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script defer src="static/script.js"></script>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<script>
+    // Automatically hide flash messages after 3 seconds
+    setTimeout(function() {
+        let messages = document.querySelectorAll(".flash-message");
+        messages.forEach(msg => {
+            msg.style.transition = "opacity 0.5s";
+            msg.style.opacity = "0";
+            setTimeout(() => msg.remove(), 500);
+        });
+    }, 3000);
+</script>
+
+<body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <video autoplay loop muted class="background-video">
+        <source src="{{ url_for('static', filename='SMB.mp4') }}" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <div class="container">
+        <div class="login-box">
+            <div class="video-container">
+                <video autoplay loop muted>
+                    <source src="static/bg1.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            
+            <div class="form-container">
+
+                <!-- Login Form (Initially Hidden) -->
+                <form id="loginForm" method="POST" action="{{ url_for('auth') }}">
+                    <h2>Login</h2>
+                    <input type="hidden" name="action" value="login">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+                </form>
+
+                <!-- Signup Form -->
+                <form id="signupForm" class="hidden" method="POST" action="{{ url_for('auth') }}">
+                    <h2>Sign Up</h2>
+                    <input type="hidden" name="action" value="register">
+                    <input type="text" name="username" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                    <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

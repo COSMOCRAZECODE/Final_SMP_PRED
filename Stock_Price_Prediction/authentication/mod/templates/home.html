@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_home.css') }}">
+</head>
+<body>
+
+    <div class="hero">
+        <video autoplay loop muted class="background-video">
+            <source src="{{ url_for('static', filename='SMB1.mp4') }}" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+
+        <div class="content">
+            <h1>Welcome to Stock Market Prediction</h1>
+            <p>Get AI-powered stock price predictions with real-time insights.</p>
+            <a href="{{ url_for('auth') }}" class="btn">Get Started</a>
+        </div>
+    </div>
+
+</body>
+</html>
