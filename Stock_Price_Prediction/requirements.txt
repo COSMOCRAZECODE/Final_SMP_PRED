@@ -1,6 +1,7 @@
 yfinance
 streamlit
 plotly.express
+scikitlearn
 sklearn.preprocessing
 keras
 alpha_vantage
