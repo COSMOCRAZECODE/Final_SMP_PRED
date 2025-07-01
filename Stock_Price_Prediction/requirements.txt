@@ -3,6 +3,6 @@ streamlit
 plotly.express
 sklearn.preprocessing
 keras
-alpha_vantage.fundamentaldata
+alpha_vantage
 stocknews
 pandas_ta
